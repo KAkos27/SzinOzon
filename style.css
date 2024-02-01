@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.tarolo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 400px;
+  margin: auto;
+}
+button,
+span {
+  width: 50px;
+  height: 50px;
+  border: 1px solid grey;
+}
+.szin1 {
+  background-color: red;
+}
+.szin2 {
+  background-color: blue;
+}
+.szin3 {
+  background-color: green;
+}
+.szin4 {
+  background-color: yellow;
+}
