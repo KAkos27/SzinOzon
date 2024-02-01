@@ -6,24 +6,38 @@
 .tarolo {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 400px;
+  width: 240px;
   margin: auto;
 }
+
 button,
 span {
   width: 50px;
   height: 50px;
   border: 1px solid grey;
+  margin-top: 10px;
 }
-.szin1 {
+.gombtarolo{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 180px;
+  margin: auto;
+}
+.piros {
   background-color: red;
 }
-.szin2 {
+.kek {
   background-color: blue;
 }
-.szin3 {
+.zold {
   background-color: green;
 }
-.szin4 {
+.sarga {
   background-color: yellow;
+}
+.narancs {
+  background-color: orange;
+}
+.lila {
+  background-color: purple;
 }
