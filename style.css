@@ -3,13 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-.tarolo {
+.tarolo,.geptipptarolo {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 240px;
   margin: auto;
 }
-
+.geptipptarolo{
+  margin-bottom: 15px;
+}
 button,
 span {
   width: 50px;
@@ -23,21 +25,47 @@ span {
   width: 180px;
   margin: auto;
 }
+.piros,
+.kek,
+.zold,
+.sarga,
+.narancs,
+.lila{
+  cursor: pointer;
+}
 .piros {
   background-color: red;
+}
+.piros:active{
+  background-color: hsl(0, 100%, 70%);
 }
 .kek {
   background-color: blue;
 }
+.kek:active {
+  background-color: hsl(240, 100%, 60%);
+}
 .zold {
   background-color: green;
+}
+.zold:active {
+  background-color: hsl(120, 100%, 35%);
 }
 .sarga {
   background-color: yellow;
 }
+.sarga:active {
+  background-color: hsl(60, 100%, 70%);
+}
 .narancs {
   background-color: orange;
 }
+.narancs:active {
+  background-color: hsl(39, 100%, 60%);
+}
 .lila {
   background-color: purple;
+}
+.lila:active {
+  background-color: hsl(300, 100%, 35%);
 }
