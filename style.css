@@ -3,13 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
-.tarolo,.geptipptarolo {
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.tarolo,
+.geptipptarolo {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 240px;
   margin: auto;
 }
-.geptipptarolo{
+.tarolo{
+  grid-column: 2;
+  grid-row: 2;
+}
+.geptipptarolo {
+  grid-column: 2;
+  grid-row: 1;
   margin-bottom: 15px;
 }
 button,
@@ -19,7 +30,8 @@ span {
   border: 1px solid grey;
   margin-top: 10px;
 }
-.gombtarolo{
+.gombtarolo {
+  grid-column: 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 180px;
@@ -30,13 +42,13 @@ span {
 .zold,
 .sarga,
 .narancs,
-.lila{
+.lila {
   cursor: pointer;
 }
 .piros {
   background-color: red;
 }
-.piros:active{
+.piros:active {
   background-color: hsl(0, 100%, 70%);
 }
 .kek {

@@ -10,9 +10,11 @@ function szinez(gomb) {
 
 function feltolt() {
   let gepTipp = new Array();
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; gepTipp.length != 4; i++) {
     let velSzin = Math.floor(Math.random() * 6 + 1);
-    gepTipp[i] = velSzin;
+    if (!gepTipp.includes(velSzin)) {
+      gepTipp.push(velSzin);
+    }
   }
   for (let i = 0; i < gepTipp.length; i++) {
     let gepStilus = document.getElementsByTagName("BUTTON");
