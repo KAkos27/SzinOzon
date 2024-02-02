@@ -1,8 +1,8 @@
 let spanIndex = 4;
 
 function szinez(gomb) {
-  var gombStilus = getComputedStyle(gomb);
-  var gombSzin = gombStilus.backgroundColor;
+  let gombStilus = getComputedStyle(gomb);
+  let gombSzin = gombStilus.backgroundColor;
   document.getElementsByTagName("SPAN")[spanIndex].style.backgroundColor =
     gombSzin;
   spanIndex++;
@@ -11,10 +11,14 @@ function szinez(gomb) {
 function feltolt() {
   let gepTipp = new Array();
   for (let i = 0; i < 4; i++) {
-    var velSzin = Math.floor(Math.random() * 6 + 1);
+    let velSzin = Math.floor(Math.random() * 6 + 1);
     gepTipp[i] = velSzin;
   }
   for (let i = 0; i < gepTipp.length; i++) {
-    gepTipp[i];
+    let gepStilus = document.getElementsByTagName("BUTTON");
+    let gepSzin = window.getComputedStyle(
+      gepStilus[gepTipp[i]]
+    ).backgroundColor;
+    document.getElementsByTagName("SPAN")[i].style.backgroundColor = gepSzin;
   }
 }
