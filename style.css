@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: white;
+}
 main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -35,6 +38,9 @@ span {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 180px;
+  margin: auto;
+}
+#ujjatek{
   margin: auto;
 }
 .piros,

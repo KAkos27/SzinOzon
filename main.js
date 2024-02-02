@@ -8,7 +8,7 @@ function szinez(gomb) {
   spanIndex++;
 }
 
-function feltolt() {
+function ujJatek() {
   let gepTipp = new Array();
   for (let i = 0; gepTipp.length != 4; i++) {
     let velSzin = Math.floor(Math.random() * 6 + 1);
@@ -16,9 +16,16 @@ function feltolt() {
       gepTipp.push(velSzin);
     }
   }
+
   for (let i = 0; i < gepTipp.length; i++) {
     let gepStilus = document.getElementsByTagName("BUTTON");
     let gepSzin = getComputedStyle(gepStilus[gepTipp[i]]).backgroundColor;
     document.getElementsByTagName("SPAN")[i].style.backgroundColor = gepSzin;
+  }
+
+  for (let i = 4; i < 41; i++) {
+    let feherStilus = document.getElementsByTagName("BODY");
+    let feherSzin = getComputedStyle(feherStilus[0]).backgroundColor;
+    document.getElementsByTagName("SPAN")[i].style.backgroundColor = feherSzin;
   }
 }
