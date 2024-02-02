@@ -16,9 +16,7 @@ function feltolt() {
   }
   for (let i = 0; i < gepTipp.length; i++) {
     let gepStilus = document.getElementsByTagName("BUTTON");
-    let gepSzin = window.getComputedStyle(
-      gepStilus[gepTipp[i]]
-    ).backgroundColor;
+    let gepSzin = getComputedStyle(gepStilus[gepTipp[i]]).backgroundColor;
     document.getElementsByTagName("SPAN")[i].style.backgroundColor = gepSzin;
   }
 }
