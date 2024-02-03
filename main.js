@@ -9,6 +9,7 @@ function szinez(gomb) {
 }
 
 function ujJatek() {
+  spanIndex = 4;
   let gepTipp = new Array();
   for (let i = 0; gepTipp.length != 4; i++) {
     let velSzin = Math.floor(Math.random() * 6 + 1);
