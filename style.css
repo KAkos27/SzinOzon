@@ -3,45 +3,77 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   background-color: white;
 }
 main {
+  height: 100vh;
+  background-color: rgb(199, 199, 199);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-.tarolo,
-.geptipptarolo {
+#tarolo,
+#geptipptarolo {
+  border-radius: 15px;
+  background-color: aliceblue;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 240px;
   margin: auto;
+  padding: 10px;
+  box-shadow: 5px 5px 5px gray;
 }
-.tarolo{
-  grid-column: 2;
-  grid-row: 2;
-}
-.geptipptarolo {
+#geptipptarolo {
+  min-height: 70px;
   grid-column: 2;
   grid-row: 1;
   margin-bottom: 15px;
+}
+#tarolo {
+  margin-top: 0;
+  grid-column: 2;
+  grid-row: 2/4;
+}
+#ujjatek {
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: aliceblue;
+  box-shadow: 5px 5px 5px gray;
+  margin: auto;
+  margin-bottom: 12px;
+  margin-left: 0;
+  width: 180px;
+  grid-column: 3;
+  grid-row: 1;
 }
 button,
 span {
   width: 50px;
   height: 50px;
   border: 1px solid grey;
-  margin-top: 10px;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 5px;
 }
 .gombtarolo {
+  height: 125px;
+  border-radius: 15px;
+  background-color: aliceblue;
+  padding: 10px;
+  box-shadow: 5px 5px 5px gray;
   grid-column: 3;
+  grid-row: 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 180px;
-  margin: auto;
+  gap: 5px;
 }
-#ujjatek{
-  margin: auto;
+#geptipptarolo span,
+.gombtarolo button {
+  margin-top: 0;
+}
+.asd {
+  display: none;
 }
 .piros,
 .kek,
