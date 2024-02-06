@@ -11,6 +11,7 @@ main {
   background-color: rgb(199, 199, 199);
   display: grid;
   grid-template-columns: 1fr 260px 1fr;
+  grid-template-rows: 110px 60px 1fr;
 }
 #tarolo,
 #geptipptarolo {
@@ -40,11 +41,11 @@ main {
   background-color: aliceblue;
   box-shadow: 5px 5px 5px gray;
   margin: auto;
-  margin-bottom: 12px;
+  margin-top: 0;
   margin-left: 0;
   width: 180px;
   grid-column: 3;
-  grid-row: 1;
+  grid-row: 2;
 }
 button,
 span {
@@ -92,7 +93,7 @@ span {
   padding: 10px;
   box-shadow: 5px 5px 5px gray;
   grid-column: 3;
-  grid-row: 2;
+  grid-row: 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 180px;

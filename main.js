@@ -14,7 +14,7 @@ const szinHozzaRendeles = (kapottSzin) => {
   }
 };
 
-const osszeHasonlit = () => {
+const sSzinez = () => {
   for (let i = 0; i < 4; i++) {
     if (jatekosTipp[i] == gepTipp[i]) {
       document
@@ -30,6 +30,31 @@ const osszeHasonlit = () => {
   }
 };
 
+const jatekVege = () => {
+  const lathatatlanKezeles = () => {
+    document.querySelector(".gombtarolo").classList.add("lathatatlan");
+    document
+      .querySelector("#geptipptarolo")
+      .querySelectorAll("span")
+      .forEach((aktSpan) => {
+        aktSpan.classList.remove("lathatatlan");
+      });
+  };
+  let eldontes = true;
+  for (let i = 0; i < jatekosTipp.length; i++) {
+    if (jatekosTipp[i] != gepTipp[i]) {
+      eldontes = false;
+    }
+  }
+  if (eldontes) {
+    alert("Nyertél");
+    lathatatlanKezeles();
+  } else if (divIndex == 8) {
+    alert("Vesztettél!");
+    lathatatlanKezeles();
+  }
+};
+
 let spanIndex = 4;
 let limit = 0;
 let divIndex = 0;
@@ -42,7 +67,8 @@ const szinez = (classNev) => {
   limit++;
   if (limit == 4) {
     szinHozzaRendeles(szin);
-    osszeHasonlit();
+    sSzinez();
+    jatekVege();
     limit = 0;
     jatekosTipp.length = 0;
     divIndex++;
@@ -54,6 +80,7 @@ const szinez = (classNev) => {
 
 const ujJatek = () => {
   spanIndex = 4;
+  limit = 0;
   gepTipp.length = 0;
   jatekosTipp.length = 0;
   for (let i = 0; gepTipp.length != 4; i++) {
@@ -68,15 +95,13 @@ const ujJatek = () => {
     document.querySelectorAll("span")[i].classList.add(szinClass);
     document.querySelectorAll("span")[i].classList.add("lathatatlan");
   }
-
   document
     .querySelector("#tarolo")
     .querySelectorAll("span")
     .forEach((aktSpan) => {
       aktSpan.className = "";
     });
-
-  for (let i = 0; i <= divIndex; i++) {
+  for (let i = 0; i < divIndex; i++) {
     document
       .querySelectorAll(".sdiv")
       [i].querySelectorAll("div")
@@ -84,6 +109,6 @@ const ujJatek = () => {
         aktDiv.className = "";
       });
   }
-
+  document.querySelector(".gombtarolo").className = "gombtarolo";
   divIndex = 0;
 };
