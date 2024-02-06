@@ -10,7 +10,7 @@ main {
   height: 100vh;
   background-color: rgb(199, 199, 199);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 260px 1fr;
 }
 #tarolo,
 #geptipptarolo {
@@ -54,6 +54,36 @@ span {
   border-radius: 15px;
   margin: auto;
   margin-top: 5px;
+}
+#starolo {
+  box-shadow: 5px 5px 5px gray;
+  padding: 10px;
+  padding-top: 15px;
+  margin: auto;
+  margin-top: 0;
+  margin-right: 0;
+  grid-row: 2/4;
+  grid-column: 1;
+  width: 80px;
+  height: 515px;
+  border-radius: 15px;
+  background-color: aliceblue;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.sdiv {
+  border-bottom: 1px solid grey;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.sdiv div {
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border: 1px solid grey;
+}
+#utolso {
+  border-bottom: 0;
 }
 .gombtarolo {
   height: 125px;
@@ -118,4 +148,10 @@ span {
 }
 .lila:active {
   background-color: hsl(300, 100%, 35%);
+}
+.szurke {
+  background-color: grey;
+}
+.fekete {
+  background-color: black;
 }

@@ -1,72 +1,72 @@
-const szinEldontes = (kapottSzin) => {
+const szinHozzaRendeles = (kapottSzin) => {
   if (kapottSzin == "piros") {
     jatekosTipp.push(1);
-  }
-  if (kapottSzin == "kek") {
+  } else if (kapottSzin == "kek") {
     jatekosTipp.push(2);
-  }
-  if (kapottSzin == "zold") {
+  } else if (kapottSzin == "zold") {
     jatekosTipp.push(3);
-  }
-  if (kapottSzin == "sarga") {
+  } else if (kapottSzin == "sarga") {
     jatekosTipp.push(4);
-  }
-  if (kapottSzin == "narancs") {
+  } else if (kapottSzin == "narancs") {
     jatekosTipp.push(5);
-  }
-  if (kapottSzin == "lila") {
+  } else if (kapottSzin == "lila") {
     jatekosTipp.push(6);
   }
 };
 
-const osszeHasonlit = (tippSzin) => {
-  const gepTippSzin = document
-    .querySelector("#geptipptarolo")
-    .querySelectorAll("span")[limit].className;
-  console.log(gepTippSzin);
-  console.log(tippSzin)
-  if (tippSzin == gepTippSzin) {
-    alert("y");
-  } else {
-    alert("n");
+const osszeHasonlit = () => {
+  for (let i = 0; i < 4; i++) {
+    if (jatekosTipp[i] == gepTipp[i]) {
+      document
+        .querySelectorAll(".sdiv")
+        [divIndex].querySelectorAll("div")
+        [i].classList.add("fekete");
+    } else if (gepTipp.includes(jatekosTipp[i])) {
+      document
+        .querySelectorAll(".sdiv")
+        [divIndex].querySelectorAll("div")
+        [i].classList.add("szurke");
+    }
   }
 };
 
 let spanIndex = 4;
 let limit = 0;
+let divIndex = 0;
 let jatekosTipp = [];
+let gepTipp = [];
 
 const szinez = (classNev) => {
   document.querySelectorAll("span")[spanIndex].classList.add(classNev);
   const szin = document.querySelectorAll("span")[spanIndex].className;
-  if (limit != 4) {
-    szinEldontes(szin);
-    osszeHasonlit(szin);
-  } else {
-    jatekosTipp.length = 0;
-    limit = 0;
-    szinEldontes(szin);
-    osszeHasonlit(szin);
-  }
   limit++;
+  if (limit == 4) {
+    szinHozzaRendeles(szin);
+    osszeHasonlit();
+    limit = 0;
+    jatekosTipp.length = 0;
+    divIndex++;
+  } else {
+    szinHozzaRendeles(szin);
+  }
   spanIndex++;
-  console.log(jatekosTipp);
 };
 
 const ujJatek = () => {
   spanIndex = 4;
-  let gepSzin = [];
-  for (let i = 0; gepSzin.length != 4; i++) {
+  gepTipp.length = 0;
+  jatekosTipp.length = 0;
+  for (let i = 0; gepTipp.length != 4; i++) {
     const velSzin = Math.floor(Math.random() * 6 + 1);
-    if (!gepSzin.includes(velSzin)) {
-      gepSzin.push(velSzin);
+    if (!gepTipp.includes(velSzin)) {
+      gepTipp.push(velSzin);
     }
   }
-  for (let i = 0; i < gepSzin.length; i++) {
-    const szinClass = document.querySelectorAll("button")[gepSzin[i]].className;
+  for (let i = 0; i < gepTipp.length; i++) {
+    const szinClass = document.querySelectorAll("button")[gepTipp[i]].className;
     document.querySelectorAll("span")[i].className = "";
     document.querySelectorAll("span")[i].classList.add(szinClass);
-    //document.querySelectorAll("span")[i].classList.add("lathatatlan");
+    document.querySelectorAll("span")[i].classList.add("lathatatlan");
   }
 
   document
@@ -75,6 +75,15 @@ const ujJatek = () => {
     .forEach((aktSpan) => {
       aktSpan.className = "";
     });
-  jatekosTipp.length = 0;
-  console.log(gepSzin);
+
+  for (let i = 0; i <= divIndex; i++) {
+    document
+      .querySelectorAll(".sdiv")
+      [i].querySelectorAll("div")
+      .forEach((aktDiv) => {
+        aktDiv.className = "";
+      });
+  }
+
+  divIndex = 0;
 };
